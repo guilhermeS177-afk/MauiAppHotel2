@@ -67,7 +67,8 @@
                              Grid.Row="0"
                              Grid.Column="2"
                              Minimum="1"
-                             Maximum="5" />
+                             Maximum="5"
+                             BackgroundColor="#DCE4EF"/>
 
                     <Label Grid.Row="1"
                            Grid.Column="0"
@@ -83,7 +84,8 @@
                              Grid.Row="1"
                              Grid.Column="2"
                              Minimum="0"
-                             Maximum="5" />
+                             Maximum="5"
+                             BackgroundColor="#DCE4EF"/>
                 </Grid>
 
                 <BoxView HeightRequest="1"
