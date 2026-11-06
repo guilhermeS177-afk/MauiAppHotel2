@@ -96,7 +96,7 @@
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center" />
 
-                <Picker x:Name="pck_quarto"
+                <Picker x:Name="pck_quarto" ItemDisplayBinding="{Binding Nome}"
                         Title="Escolha uma acomodação"
                         BackgroundColor="#F5F5F5"
                         TextColor="#172A46" />
@@ -116,7 +116,7 @@
                                Text="Data Check-in:"
                                FontAttributes="Bold" />
 
-                        <DatePicker x:Name="dtpck_checkin"
+                        <DatePicker x:Name="dtpck_checkin" DateSelected="dtpck_checkin_DateSelected"
                                     Grid.Row="0"
                                     Grid.Column="1"
                                     TextColor="#172A46" />
@@ -134,7 +134,7 @@
                     </Grid>
                 </Border>
 
-                <Button Text="Calcular!" />
+                <Button Text="Calcular!" Clicked="Button_Clicked" />
 
                 <Button Text="Sobre"
                         Clicked="AbrirSobre_Clicked"
