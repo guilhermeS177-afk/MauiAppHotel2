@@ -19,7 +19,7 @@ public partial class NewPage1 : ContentPage
         pck_quarto.ItemsSource = Lista_Quartos;
 
         dtpck_checkin.MinimumDate = DateTime.Now;
-        dtpck_checkin.MinimumDate = DateTime.Now.AddMonths(3);
+        dtpck_checkin.MaximumDate = DateTime.Now.AddMonths(3);
 
 
         dtpck_checkout.MinimumDate = DateTime.Now.AddDays(1);
