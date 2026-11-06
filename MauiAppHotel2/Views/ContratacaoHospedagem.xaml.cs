@@ -23,7 +23,7 @@ public partial class NewPage1 : ContentPage
 
 
         dtpck_checkout.MinimumDate = DateTime.Now.AddDays(1);
-        dtpck_checkout.MinimumDate = DateTime.Now.AddMonths(4);
+        dtpck_checkout.MaximumDate = DateTime.Now.AddMonths(4);
     }
 
     private async void AbrirSobre_Clicked(object sender, EventArgs e)
