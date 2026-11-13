@@ -2,22 +2,75 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel2.Views.HopedagemContratada"
-             Title="HopedagemContratada">
-    <VerticalStackLayout VerticalOptions="Center">
+             Title="HopedagemContratada"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout VerticalOptions="Center"
+                         Spacing="10"
+                         Padding="10">
         <Label 
             Text="{Binding Path=QuartoEscolhido.Nome}"
-            VerticalOptions="Center" 
+            VerticalOptions="Center"
+            FontFamily="Bungee"
+            TextColor="#172A46"
+            FontSize="40"
             HorizontalOptions="Center" />
 
-        <Label 
-    Text="{Binding Estadia}"
-    VerticalOptions="Center" 
-    HorizontalOptions="Center" />
+        <Border StrokeShape="RoundRectangle 10"
+        BackgroundColor="{StaticResource Gray600}">
+            <Grid ColumnDefinitions="*, *" Padding="5"
+          RowDefinitions="Auto, Auto">
+                <Label Grid.Column="0" Grid.Row="0" Text="Adultos" />
+                <Label Grid.Column="0" Grid.Row="1"
+                       TextColor="#B28B45"
+                       Text="{Binding QtdAdultos}" />
 
-        <Label 
-    Text="{Binding TotalHospedagem}"
-    VerticalOptions="Center" 
-    HorizontalOptions="Center" />
+                <Label Grid.Column="1" Grid.Row="0" Text="Crianças" />
+                <Label Grid.Column="1" Grid.Row="1"
+                       TextColor="#B28B45"
+                       Text="{Binding Qtdcrianca}" />
+            </Grid>
+        </Border>
+
+        <Border StrokeShape="RoundRectangle 10"
+        BackgroundColor="{StaticResource Gray600}">
+            <Grid ColumnDefinitions="*, *, *" Padding="5"
+          RowDefinitions="Auto, Auto">
+                <Label Grid.Column="0" Grid.Row="0" Text="Data Checkin:" />
+                <Label Grid.Column="0" Grid.Row="1"
+                       TextColor="#B28B45"
+                       Text="{Binding DataCheckin, StringFormat='{}{0:dd/MM/yyyy}'}" />
+
+                <Label Grid.Column="1" Grid.Row="0" Text="Data Checkout:" />
+                <Label Grid.Column="1" Grid.Row="1"
+                       TextColor="#B28B45"
+                       Text="{Binding DataCheckout, StringFormat='{}{0:dd/MM/yyyy}'}" />
+                
+                <Label Grid.Column="2" Grid.Row="0" Text="Estadia" />
+                <Label Grid.Column="2" Grid.Row="1"
+                       TextColor="#B28B45"
+                       Text="{Binding Estadia}" />
+            </Grid>
+        </Border>
+
+        <Border StrokeShape="RoundRectangle 10"
+        BackgroundColor="{StaticResource Gray600}">
+            <VerticalStackLayout Padding="5">
+                <Label Text="Total Estadia:" />
+                <Label  TextColor="#B28B45"
+               Text="{Binding TotalHospedagem, StringFormat='{}{0:C}'}" />
+            </VerticalStackLayout>
+        </Border>
+
+        <Button Text="Voltar" HorizontalOptions="Center" Clicked="Button_Clicked"
+                 BackgroundColor="#172A46"
+                 TextColor="White"/>
 
 
     </VerticalStackLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel2.Views.ResumoEvento"
+             Title="Resumo do Evento"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="22" Spacing="15">
+            <Label Text="Resumo do Evento" FontSize="24" FontAttributes="Bold" TextColor="#172A46" HorizontalTextAlignment="Center" />
+
+            <Border Stroke="#DEDEDE" StrokeShape="RoundRectangle 16" BackgroundColor="White" Padding="16">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="{Binding Nome, StringFormat='Evento: {0}'}" FontSize="18" FontAttributes="Bold" TextColor="#172A46" />
+
+                    <Label Text="{Binding Local, StringFormat='Local: {0}'}" TextColor="#555" />
+
+                    <Label Text="{Binding DataInicio, StringFormat='Início: {0:dd/MM/yyyy}'}" TextColor="#555" />
+
+                    <Label Text="{Binding DataTermino, StringFormat='Término: {0:dd/MM/yyyy}'}" TextColor="#555" />
+
+                    <!-- Requisito 2: Duração -->
+                    <Label Text="{Binding DuracaoDias, StringFormat='Duração: {0} dia(s)'}" FontAttributes="Bold" TextColor="#172A46" />
+
+                    <Label Text="{Binding NumeroParticipantes, StringFormat='Participantes: {0}'}" TextColor="#555" />
+
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='Custo por participante: {0:C}'}" TextColor="#555" />
+
+                    <!-- Requisito 1: Custo Total -->
+                    <Label Text="{Binding CustoTotal, StringFormat='Custo Total: {0:C}'}" FontSize="18" FontAttributes="Bold" TextColor="#B28B45" Margin="0,10,0,0" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Voltar ao Início" Clicked="Voltar_Clicked" BackgroundColor="#172A46" TextColor="White" CornerRadius="12" HeightRequest="48" Margin="0,20,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

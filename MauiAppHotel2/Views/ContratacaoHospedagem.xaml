@@ -141,6 +141,12 @@
                         BackgroundColor="#B28B45"
                         TextColor="White" />
 
+                <Button Text="Cadastro de Evento"
+        Clicked="AbrirCadastroEvento_Clicked"
+        BackgroundColor="#315B83"
+        TextColor="White" />
+
+
             </VerticalStackLayout>
         </Border>
 

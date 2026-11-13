@@ -31,6 +31,12 @@ public partial class NewPage1 : ContentPage
         await Shell.Current.GoToAsync(nameof(Sobre));
     }
 
+    private async void AbrirCadastroEvento_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CadastroEvento());
+    }
+
+
     private void dtpck_checkin_DateSelected(object sender, DateChangedEventArgs e)
     {
         dtpck_checkout.MinimumDate = e.NewDate?.AddDays(1);
@@ -45,7 +51,7 @@ public partial class NewPage1 : ContentPage
                 QtdAdultos = Convert.ToInt32(stp_adultos.Value),
                 Qtdcrianca = Convert.ToInt32(stp_criancas.Value),
                 QuartoEscolhido = (Quarto)pck_quarto.SelectedItem,
-                DataCheckin = dtpck_checkin.Date.Value,
+                DataCheckin = dtpck_checkin.Date,
                 DataCheckout = dtpck_checkout.Date.Value,
             };
 
